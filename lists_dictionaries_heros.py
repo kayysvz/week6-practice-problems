@@ -19,9 +19,22 @@ franchise = {
 }
 z = [ {'x': 10, 'y': 20} ]
 #1.) How would you change the value 10 in x to 15?  Once you're done x should then be [ [5,2,3], [15,8,9] ].  
+for i in range(len(x)):
+    for j in range(len(x)):
+        if x[i][j]==10:
+            x[i][j]=15
 #2.) How would you change the hero_name of the first hero from 'Batman' to "Dark Knight"?
+for h in heros:
+    if h['hero_name'] == 'Batman':
+        h['hero_name'] = 'Dark Knight'
 #3.) For the franchise dictionary, how would you change 'Aquaman' to 'Daredevil'?
+for f in franchise['dc']:
+    if f=='Aquaman':
+        f='Daredevil'
 #4.) For z, how would you change the value 20 to 30?
+for i in z[0].values():
+    if i == 20:
+        i=30
 
 #-----------------------------------------------------------------
 #Problem 2
@@ -34,6 +47,12 @@ superheros = [
     {'real_name': 'Bruce Banner', 'hero_name': 'The Incredible Hulk'},
     {'real_name': 'Diana Prince', 'hero_name': 'Wonder Woman'}
 ]
+
+def iterateDictionary(dictionary):
+    for d in dictionary:
+        print('\n')
+        for k,v in d.items():
+            print(f'{k} - {v} ', end="")
 
 #iterateDictionary(superheros) should output
 
@@ -48,6 +67,11 @@ superheros = [
 #it outputs the value stored in that key for each dictionary.  
 #For example, iterateDictionary2('real_name', superheros) should output
 
+def iterateDictionary(key, dictionary):
+    for d in dictionary:
+        for k,v in d.items():
+            if k==key:
+                print(v)
 #Steve Rogers
 #Barry Allan
 #Bruce Banner
@@ -62,6 +86,13 @@ movie_collection = {
     'disney': ['Cinderella', 'Encanto', 'Little Mermaid', 'Tangled', 'Beauty & The Beast', 'Lion King', '101 Dalmations'],
     'pixar': ['Toy Story', 'Monsters, Inc.', 'Up', 'Finding Nemo', 'Coco', 'Wall-E', 'The Incredibles', 'Inside Out']
 }
+
+def count_and_name(dictionary):
+    count=0
+    for k,v in dictionary.items():
+        for s in v:
+            print(s)
+            count+=1
 
 #Expected Outpout
 #7 DISNEY
